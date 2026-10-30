@@ -49,13 +49,15 @@ npm test           # unit tests for the type chart, scoring, names and links
 npm run build      # production build in dist/
 ```
 
-### Updating the usage data
+### Usage data
 
-The JSON in `public/data` comes from the Python project. With both repos side by side:
+The app loads the latest JSON straight from the [tracker repo](https://github.com/Eb-8734843/pokemon-meta-tracker/tree/main/exports),
+which a GitHub Action updates every month, so new data appears without a redeploy.
+
+`public/data` is a backup copy, used if that can't be reached. To refresh it, with both repos side by side:
 
 ```bash
-cd ../pokemon-meta-tracker && meta-tracker export && meta-tracker --format gen9uu export
-cd ../pokemon-team-builder && npm run sync-data
+npm run sync-data
 ```
 
 ## Deploy

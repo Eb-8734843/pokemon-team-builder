@@ -7,10 +7,24 @@ export const FORMATS = [
   { id: 'gen9uu', label: 'Gen 9 UU' },
 ]
 
+// The tracker's monthly GitHub Action publishes new exports here, so the site stays current
+// without a redeploy. public/data is the backup if this can't be reached.
+const LIVE_DATA = 'https://raw.githubusercontent.com/Eb-8734843/pokemon-meta-tracker/main/exports'
+
+async function fetchJson(url) {
+  try {
+    const res = await fetch(url)
+    return res.ok ? await res.json() : null
+  } catch {
+    return null
+  }
+}
+
 export async function loadMeta(format) {
-  const res = await fetch(`${import.meta.env.BASE_URL}data/meta-${format}.json`)
-  if (!res.ok) return null
-  const meta = await res.json()
+  const file = `meta-${format}.json`
+  const meta =
+    (await fetchJson(`${LIVE_DATA}/${file}`)) ?? (await fetchJson(`${import.meta.env.BASE_URL}data/${file}`))
+  if (!meta) return null
   const index = new Map()
   for (const p of meta.pokemon) {
     index.set(p.slug, p)

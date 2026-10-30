@@ -3,7 +3,7 @@
 Build a team of 6 and get **coached**: it warns you about shared weaknesses, scores the team, and
 suggests better picks using real competitive usage data.
 
-> Live site: _add your Vercel/Netlify link here_
+> **Live site: [pokemon-team-builder-lemon.vercel.app](https://pokemon-team-builder-lemon.vercel.app)**
 
 Showdown's teambuilder lets you build a team but doesn't tell you what's wrong with it. This one explains and recommends:
 

@@ -7,6 +7,8 @@ suggests better picks using real competitive usage data.
 >
 > Usage data comes from my [Meta Tracker dashboard](https://pokemon-meta-tracker-lvxim6hx4xmcluqcqqmvst.streamlit.app).
 
+![Team Builder showing a team, its score, weakness warnings and suggested teammates](docs/team-builder-desktop.png)
+
 Showdown's teambuilder lets you build a team but doesn't tell you what's wrong with it. This one explains and recommends:
 
 - **Weakness warnings**, e.g. "4 of your 6 are weak to Ground, only 2 resist it."
@@ -15,6 +17,10 @@ Showdown's teambuilder lets you build a team but doesn't tell you what's wrong w
 - **Team score** out of 100 for defence, type coverage, speed spread and role balance.
 - **Defensive type chart** for the whole team at a glance.
 - **Shareable team links** and auto-save to localStorage.
+
+It also works on phones:
+
+<img src="docs/team-builder-mobile.png" alt="Team Builder on a phone-sized screen" width="280">
 
 ## How it works
 
